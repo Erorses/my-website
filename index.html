@@ -1,0 +1,213 @@
+ <!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Букет для тебе</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #08090d;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #ffd0e5;
+    font-size: clamp(20px, 5vw, 30px);
+    text-align: center;
+}
+
+svg {
+    display: block;
+    width: min(92vw, 460px);
+    height: auto;
+}
+
+.flower {
+    opacity: 0;
+    animation: appear 900ms ease-out forwards;
+}
+
+.stem {
+    fill: none;
+    stroke: #69d957;
+    stroke-width: 5;
+    stroke-linecap: round;
+}
+
+.leaf {
+    fill: url(#greenLines);
+    stroke: #69d957;
+    stroke-width: 2;
+}
+
+.wrap-line {
+    fill: none;
+    stroke: #ff9fc9;
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+.message {
+    color: #ffb5d4;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    animation: appear 1.2s ease-out 2s both;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+    }
+    .flower {
+        opacity: 1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Букет для тебе</h1>
+
+<svg viewBox="0 0 400 500"
+     role="img"
+     aria-label="Кольоровий букет квітів">
+
+<defs>
+    <pattern id="pinkLines" width="8" height="8"
+             patternUnits="userSpaceOnUse">
+        <path d="M0 2 H8" stroke="#ff79bd" stroke-width="3"/>
+    </pattern>
+
+    <pattern id="yellowLines" width="8" height="8"
+             patternUnits="userSpaceOnUse">
+        <path d="M0 2 H8" stroke="#ffe45c" stroke-width="3"/>
+    </pattern>
+
+    <pattern id="redLines" width="8" height="8"
+             patternUnits="userSpaceOnUse">
+        <path d="M0 2 H8" stroke="#ff586d" stroke-width="3"/>
+    </pattern>
+
+    <pattern id="purpleLines" width="8" height="8"
+             patternUnits="userSpaceOnUse">
+        <path d="M0 2 H8" stroke="#bd91ff" stroke-width="3"/>
+    </pattern>
+
+    <pattern id="greenLines" width="8" height="8"
+             patternUnits="userSpaceOnUse">
+        <path d="M0 2 H8" stroke="#75e85b" stroke-width="3"/>
+    </pattern>
+</defs>
+
+<!-- Стебла -->
+<g class="flower" style="animation-delay: 1s">
+    <path class="stem"
+          d="M200 220 L95 405
+             M200 220 L150 420
+             M200 220 L205 425
+             M200 220 L260 415
+             M200 220 L310 395
+             M200 220 L65 380"/>
+</g>
+
+<!-- Листя -->
+<g class="flower" style="animation-delay: 1.3s">
+    <path class="leaf"
+          d="M174 315 Q105 260 82 310 Q120 350 174 315Z"/>
+
+    <path class="leaf"
+          d="M190 355 Q120 320 112 365 Q150 395 190 355Z"/>
+
+    <path class="leaf"
+          d="M220 315 Q290 260 318 310 Q275 350 220 315Z"/>
+
+    <path class="leaf"
+          d="M218 360 Q290 320 304 365 Q260 398 218 360Z"/>
+</g>
+
+<!-- Квіти -->
+
+<g class="flower" style="animation-delay: 0.2s">
+    <circle cx="112" cy="105" r="39" fill="url(#pinkLines)"/>
+    <circle cx="112" cy="105" r="10" fill="#ffe45c"/>
+</g>
+
+<g class="flower" style="animation-delay: 0.5s">
+    <circle cx="200" cy="65" r="36" fill="url(#yellowLines)"/>
+    <circle cx="200" cy="65" r="11" fill="#ffbd28"/>
+</g>
+
+<g class="flower" style="animation-delay: 0.8s">
+    <circle cx="290" cy="112" r="39" fill="url(#redLines)"/>
+    <circle cx="290" cy="112" r="10" fill="#ffd0a8"/>
+</g>
+
+<g class="flower" style="animation-delay: 1.1s">
+    <circle cx="200" cy="165" r="43" fill="url(#pinkLines)"/>
+    <circle cx="200" cy="165" r="11" fill="#ffd8eb"/>
+</g>
+
+<g class="flower" style="animation-delay: 1.4s">
+    <circle cx="65" cy="195" r="35" fill="url(#yellowLines)"/>
+    <circle cx="65" cy="195" r="9" fill="#fff18a"/>
+</g>
+
+<g class="flower" style="animation-delay: 1.6s">
+    <circle cx="330" cy="205" r="35" fill="url(#yellowLines)"/>
+    <circle cx="330" cy="205" r="9" fill="#fff18a"/>
+</g>
+
+<g class="flower" style="animation-delay: 1.8s">
+    <circle cx="270" cy="210" r="27" fill="url(#purpleLines)"/>
+    <circle cx="270" cy="210" r="8" fill="#ffe45c"/>
+</g>
+
+<!-- Обгортка букета -->
+<g class="flower" style="animation-delay: 2s">
+    <path class="wrap-line"
+          d="M88 300 L200 455 L312 300
+             M88 300 H312
+             M112 335 H288
+             M137 370 H263
+             M163 405 H237
+             M185 435 H215"/>
+
+    <path class="wrap-line"
+          d="M200 455 Q165 472 180 490
+             M200 455 Q235 472 220 490"/>
+</g>
+
+</svg>
+
+<div class="message">З любов'ю ❤️</div>
+
+</body>
+</html>
